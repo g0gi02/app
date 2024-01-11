@@ -15,7 +15,7 @@ function init() {
 }
 
 function setupHomePage() {
-    setupFirstTab();  
+    // setupFirstTab();  
 }
 
 function setupFirstTab() {
@@ -122,5 +122,58 @@ function hideElement(selector) {
         element.style.display = 'none';
     }
 }
+
+// Personnel
+let personnel = [
+    {
+        name: 'Max Mustermann',
+        position: 'CEO',
+        email: 'testmail.com'
+    },
+    {
+        name: 'Bjarne Mädel',
+        position: 'CTO',
+        email: 'Bjarnemail.com'
+    }
+]
+
+function clearTable(table) {
+    // Clear table
+    const thead = table.getElementsByTagName('thead')[0];
+    const tbody = table.getElementsByTagName('tbody')[0];
+    thead.innerHTML = '';
+    tbody.innerHTML = '';
+}
+
+function constructTable(data) {
+    // From JSON to Table
+    const personnelTable = document.getElementById('Personnel-table');
+    const personnelThead = personnelTable.getElementsByTagName('thead')[0];
+    const personnelTbody = personnelTable.getElementsByTagName('tbody')[0];
+
+    clearTable(personnelTable);
+
+
+    const headerRow = personnelThead.insertRow();
+    Object.keys(personnel[0]).forEach(key => {
+        const th = document.createElement('th');
+        th.textContent = key;
+        headerRow.appendChild(th);
+    });
+
+    personnel.forEach(person => {
+        const row = personnelTbody.insertRow();
+        Object.values(person).forEach(value => {
+            const cell = row.insertCell();
+            cell.textContent = value;
+        });
+    });
+}
+
+createTableButton = document.getElementById('createTableButton');
+createTableButton.addEventListener('click', () => {
+    constructTable(personnel);
+});
+
 
 init();

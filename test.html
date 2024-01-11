@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Table</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    table {
+        /* background: linear-gradient(45deg, #e22e57, #5f2c82); */
+        /* background: linear-gradient(45deg, rgba(226,46,87,0.8), rgba(95,44,130,0.5)); */
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        margin: 50px;
+    }
+
+    th, td {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        color: #000;
+    }
+
+    th {
+        text-align: left;
+        background: rgba(226, 46, 87, 0.8);
+        color: #fff;
+    }
+
+    /* Row */
+    tr {
+        &:nth-child(even) {
+            background: rgba(0, 0, 0, 0.01);
+        }
+        &:nth-child(odd) {
+            background: rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    /* Column */
+    td {
+        position: relative;
+        &:hover {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background: rgba(0, 0, 0, 0.1);
+                z-index: -1;
+            }
+        }
+    }
+
+
+    
+
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+        <tr>
+            <td>Data 7</td>
+            <td>Data 8</td>
+            <td>Data 9</td>
+        </tr>
+        <tr>
+            <td>Data 10</td>
+            <td>Data 11</td>
+            <td>Data 12</td>
+        </tr>
+        <tr>
+            <td>Data 13</td>
+            <td>Data 14</td>
+            <td>Data 15</td>
+        </tr>
+        <tr>
+            <td>Data 16</td>
+            <td>Data 17</td>
+            <td>Data 18</td>
+        </tr>
+        <tr>
+            <td>Data 19</td>
+            <td>Data 20</td>
+            <td>Data 21</td>
+        </tr>
+    </table>
+</body>
+</html>

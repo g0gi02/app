@@ -66,7 +66,7 @@ body {
 .line {
   position: absolute;
   top: 88px;
-  left: 0px;
+  left: -100px;
   width: 90px;
   height: 5px;
   background: rgb(226, 62, 87);
@@ -87,9 +87,59 @@ body {
   display: flex;
 }
 
-.table-head {
-  height: 60px;
-  background: #36304a;
+.input-field {
+  flex: 1;
+}
+
+.table-container {
+  flex: 1;
+}
+
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin: 50px;
+}
+
+th, td {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  color: #000;
+}
+
+th {
+  text-align: left;
+  background: rgba(226, 46, 87, 0.8);
+  color: #fff;
+}
+
+/* Row */
+tr {
+  &:nth-child(even) {
+      background: rgba(0, 0, 0, 0.01);
+  }
+  &:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Column */
+td {
+  position: relative;
+  &:hover {
+      &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -9999px;
+          bottom: -9999px;
+          background: rgba(0, 0, 0, 0.1);
+          z-index: -1;
+      }
+  }
 }
 
 .navbar a {

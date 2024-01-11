@@ -7,6 +7,7 @@
     <title>Medical Institution Management</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
 </head>
 <body>
     <!-- login/register page -->
@@ -30,10 +31,10 @@
                             <i class='bx bxs-lock-alt'></i>
                         </div>
                         
-                        <!-- <div class="remember-forgot">
+                        <div class="remember-forgot">
                             <label><input type="checkbox"> Remember me</label>
                             <a href="#">Forgot Password</a>
-                        </div> -->
+                        </div>
                         
                         <button type="submit" class="btn">Login</button>
                         
@@ -82,8 +83,11 @@
                 </div>
                 <div class="line"></div>
             </header>
+            
+            <button type = "button"> CLick me! </button>
 
             <div class="content-box">
+                <!-- Patients -->
                 <div class="content">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, officiis iste repudiandae ratione incidunt pariatur ad, amet doloribus asperiores perspiciatis et! Et, quis ab earum vitae ipsam temporibus tempore modi!</p>
                     <table> 
@@ -100,7 +104,21 @@
                     </table>
                 </div>
                 
-                <div class="content"> <p>hi</p></div>
+                <!-- Personell -->
+                <div class="content">
+                    <div class="input-field">
+                        <button id="createTableButton">CreateTable</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table id="Personnel-table">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>    
+                    </div>
+                </div>
+
+                <div class="content"> <p>Bjarnies</p></div>
                 
             </div>
         </div>
