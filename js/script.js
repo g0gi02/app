@@ -3,6 +3,7 @@ const registerLink = document.querySelector('.register-link a');
 const loginLink = document.querySelector('.login-link a');
 const loginButton = document.querySelector('form-box.login form button');
 const loginForm = document.querySelector('.form-box.login form');
+const personnelForm = document.getElementById('personnel-form');
 const homepageTabs = document.querySelectorAll('.home-page header .tablink');
 const signOutButtons = document.querySelectorAll('.sign-out-button');
 const homepageContents = document.querySelectorAll('.home-page .content-box .content');
@@ -55,6 +56,17 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     showSinglePage('home-page');
     setupHomePage();
+});
+
+personnelForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    personnel.push({
+        name: personnelForm.name.value,
+        position: personnelForm.position.value,
+        email: personnelForm.email.value
+    });
+
+    personnelForm.reset();
 });
 
 registerLink.onclick = () => {
@@ -128,7 +140,8 @@ let personnel = [
     {
         name: 'Max Mustermann',
         position: 'CEO',
-        email: 'testmail.com'
+        email: 'testmail.com',
+        geschlecht: 'Divers'
     },
     {
         name: 'Bjarne Mädel',
@@ -145,25 +158,24 @@ function clearTable(table) {
     tbody.innerHTML = '';
 }
 
-function constructTable(data) {
+function constructTable(data, table_id) {
     // From JSON to Table
-    const personnelTable = document.getElementById('Personnel-table');
-    const personnelThead = personnelTable.getElementsByTagName('thead')[0];
-    const personnelTbody = personnelTable.getElementsByTagName('tbody')[0];
+    const currentTable = document.getElementById(table_id);
+    const currentThead = currentTable.getElementsByTagName('thead')[0];
+    const currentTbody = currentTable.getElementsByTagName('tbody')[0];
 
-    clearTable(personnelTable);
+    clearTable(currentTable);
 
-
-    const headerRow = personnelThead.insertRow();
-    Object.keys(personnel[0]).forEach(key => {
+    const headerRow = currentThead.insertRow();
+    Object.keys(data[0]).forEach(key => {
         const th = document.createElement('th');
         th.textContent = key;
         headerRow.appendChild(th);
     });
 
-    personnel.forEach(person => {
-        const row = personnelTbody.insertRow();
-        Object.values(person).forEach(value => {
+    data.forEach(element => {
+        const row = currentTbody.insertRow();
+        Object.values(element).forEach(value => {
             const cell = row.insertCell();
             cell.textContent = value;
         });
@@ -172,7 +184,8 @@ function constructTable(data) {
 
 createTableButton = document.getElementById('createTableButton');
 createTableButton.addEventListener('click', () => {
-    constructTable(personnel);
+    // constructTable(personnel);
+    constructTable(personnel, 'Personnel-table')
 });
 
 

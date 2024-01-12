@@ -89,6 +89,10 @@ body {
 
 .input-field {
   flex: 1;
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .table-container {
@@ -202,6 +206,11 @@ td {
   padding: 30px 40px;
 }
 
+.content .wrapper {
+  width: auto;
+  margin: auto;
+}
+
 .wrapper h1 {
   font-size: 36px;
   text-align: center;
@@ -256,6 +265,13 @@ td {
   font-size: 20px;
 }
 
+.input-box.small {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  margin: 40px 0;
+}
+
 .wrapper .remember-forgot {
   display: flex;
   justify-content: space-between;
@@ -282,6 +298,23 @@ td {
   text-decoration: underline;
 }
 
+.btn {
+  width: 100%;
+  height: 40px;
+  background: #333333;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  &:active {
+      background: #222222;
+  }
+}
+
 .wrapper .btn {
  width: 100%;
  height: 45px;
@@ -294,7 +327,11 @@ td {
  font-size: 16px;
  color: white;
  font-weight: 600;
+ &:active {
+  background: #222222;
 }
+}
+
 
 .wrapper .my-link {
   font-size: 14.5px;
